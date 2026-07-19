@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HI AMEL❤️</title>
-    
+    <title>Hi Amelia ❤️</title>
+
     <!-- Google Fonts for elegant typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
     <!-- Canvas Confetti CDN -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
@@ -48,7 +51,8 @@
         }
 
         /* ================= BACKGROUND EFFECTS ================= */
-        #stars-container, #hearts-container {
+        #stars-container,
+        #hearts-container {
             position: fixed;
             top: 0;
             left: 0;
@@ -99,6 +103,7 @@
             0% {
                 box-shadow: inset 0 0 50px rgba(255, 255, 255, 0);
             }
+
             100% {
                 box-shadow: inset 0 0 120px rgba(255, 101, 163, 0.4);
             }
@@ -363,6 +368,194 @@
             margin: 0 auto;
         }
 
+        /* ================= PLACES TO VISIT SECTION ================= */
+        .places-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid var(--glass-border);
+            color: var(--text-dark);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(45deg, var(--pink-accent), var(--rose-deep));
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(255, 101, 163, 0.35);
+            transform: translateY(-2px);
+        }
+
+        .places-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .place-card {
+            background: rgba(255, 255, 255, 0.55);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(255, 182, 193, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .place-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(255, 101, 163, 0.25);
+            background: rgba(255, 255, 255, 0.75);
+        }
+
+        .place-banner {
+            height: 190px;
+            position: relative;
+            overflow: hidden;
+            background: #ffe6f0;
+        }
+
+        .place-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .place-card:hover .place-img {
+            transform: scale(1.08);
+        }
+
+        .place-banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(63, 45, 55, 0.4) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        /* ================= TIKTOK EMBED STYLES ================= */
+        .tiktok-embed-container {
+            width: 100%;
+            height: 480px;
+            position: relative;
+            background: #000000;
+            border-radius: 20px 20px 0 0;
+            overflow: hidden;
+        }
+
+        .tiktok-embed-player {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 20px 20px 0 0;
+        }
+
+        .place-status-tag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(5px);
+            color: var(--rose-deep);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            letter-spacing: 0.5px;
+        }
+
+        .place-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .place-location {
+            font-size: 0.82rem;
+            color: var(--pink-accent);
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .place-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--rose-deep);
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .place-desc {
+            font-size: 0.92rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 18px;
+            flex: 1;
+        }
+
+        .place-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 12px;
+            border-top: 1px dashed rgba(255, 101, 163, 0.25);
+        }
+
+        .place-category {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            background: rgba(255, 230, 240, 0.7);
+            padding: 4px 10px;
+            border-radius: 12px;
+        }
+
+        .place-heart-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.3s ease;
+            padding: 4px 8px;
+            border-radius: 15px;
+        }
+
+        .place-heart-btn:hover,
+        .place-heart-btn.liked {
+            color: var(--pink-accent);
+            transform: scale(1.1);
+        }
+
+        .place-heart-btn.liked {
+            background: rgba(255, 101, 163, 0.12);
+        }
+
         /* ================= CLOSING LETTER SECTION ================= */
         #closing-letter {
             border-left: 4px solid var(--pink-accent);
@@ -483,11 +676,98 @@
 
         /* ================= FOOTER ================= */
         footer {
+            margin-top: 40px;
+            margin-bottom: 60px;
             text-align: center;
-            padding: 40px 20px 80px;
-            font-size: 0.95rem;
+        }
+
+        .footer-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 30px;
+            padding: 45px 30px;
+            box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .footer-logo {
+            font-size: 2.8rem;
+            display: inline-block;
+            animation: heartBeat 2.5s infinite;
+        }
+
+        .footer-quote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.15rem;
+            color: var(--rose-deep);
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 8px 0;
+        }
+
+        .footer-link-btn {
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid var(--glass-border);
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .footer-link-btn:hover {
+            background: linear-gradient(45deg, var(--pink-accent), var(--rose-deep));
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 101, 163, 0.3);
+        }
+
+        .footer-divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--pink-accent), transparent);
+            margin: 5px 0;
+        }
+
+        .footer-copy {
+            font-size: 0.9rem;
             color: var(--text-muted);
             letter-spacing: 0.5px;
+        }
+
+        .back-to-top {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--rose-deep);
+            font-weight: 600;
+            font-size: 0.88rem;
+            cursor: pointer;
+            border: none;
+            background: none;
+            margin-top: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
         }
 
         /* ================= ANIMATIONS ================= */
@@ -496,12 +776,15 @@
                 transform: translateY(0) rotate(0deg) scale(0.8);
                 opacity: 0;
             }
+
             10% {
                 opacity: 0.7;
             }
+
             90% {
                 opacity: 0.7;
             }
+
             100% {
                 transform: translateY(-110vh) rotate(360deg) scale(1.2);
                 opacity: 0;
@@ -513,6 +796,7 @@
                 transform: scale(0.2);
                 opacity: 0.1;
             }
+
             100% {
                 transform: scale(1.2);
                 opacity: 0.9;
@@ -520,17 +804,43 @@
         }
 
         @keyframes heartBeat {
-            0% { transform: scale(1); }
-            14% { transform: scale(1.12); }
-            28% { transform: scale(1); }
-            42% { transform: scale(1.12); }
-            70% { transform: scale(1); }
+            0% {
+                transform: scale(1);
+            }
+
+            14% {
+                transform: scale(1.12);
+            }
+
+            28% {
+                transform: scale(1);
+            }
+
+            42% {
+                transform: scale(1.12);
+            }
+
+            70% {
+                transform: scale(1);
+            }
         }
 
         @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.9; }
-            50% { transform: scale(1.06); opacity: 1; text-shadow: 0 0 15px rgba(255, 101, 163, 0.5); }
-            100% { transform: scale(1); opacity: 0.9; }
+            0% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
+
+            50% {
+                transform: scale(1.06);
+                opacity: 1;
+                text-shadow: 0 0 15px rgba(255, 101, 163, 0.5);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 0.9;
+            }
         }
 
         @keyframes cardEntrance {
@@ -538,6 +848,7 @@
                 opacity: 0;
                 transform: scale(0.9) translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1) translateY(0);
@@ -545,8 +856,15 @@
         }
 
         @keyframes textFadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes fadeZoomIn {
@@ -554,6 +872,7 @@
                 opacity: 0;
                 transform: scale(0.96) translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: scale(1) translateY(0);
@@ -565,28 +884,35 @@
             .romance-title {
                 font-size: 3.5rem;
             }
+
             .section-card {
                 padding: 35px 25px;
             }
+
             .story-layout {
                 flex-direction: column-reverse;
                 text-align: center;
                 gap: 25px;
             }
+
             .story-text {
                 text-align: center;
             }
+
             .story-visual {
                 width: 200px;
                 height: 200px;
             }
+
             .countdown-item {
                 min-width: 120px;
                 padding: 15px 10px;
             }
+
             .countdown-val {
                 font-size: 2.2rem;
             }
+
             .section-title {
                 font-size: 1.8rem;
             }
@@ -596,30 +922,37 @@
             .countdown-grid {
                 gap: 12px;
             }
+
             .countdown-item {
-                min-width: calc(50% - 6px); /* 2x2 grid */
+                min-width: calc(50% - 6px);
+                /* 2x2 grid */
                 padding: 15px 8px;
             }
+
             .romance-title {
                 font-size: 3rem;
             }
+
             .sub-romantic {
                 font-size: 1.1rem;
             }
+
             .modal-card {
                 padding: 35px 20px;
             }
+
             .modal-title {
                 font-size: 1.8rem;
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- AUDIO ELEMENT -->
     <audio id="bgMusic" loop preload="auto">
-        <source src="music.mp3" type="audio/mpeg">
+        <source src="judul.mp3" type="audio/mpeg">
     </audio>
 
     <!-- BACKGROUND ANIMATION LAYERS -->
@@ -630,7 +963,9 @@
     <div id="intro-overlay">
         <div class="envelope-container">
             <span class="envelope-icon">💌</span>
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--rose-deep); margin-bottom: 10px;">Hai Amelia</h2>
+            <h2
+                style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--rose-deep); margin-bottom: 10px;">
+                Halo Amel</h2>
             <p style="font-size: 0.95rem; color: var(--text-muted);">Silakan ketuk tombol di bawah untuk membukanya</p>
             <button onclick="openLetter()" class="open-btn">Buka Surat ✨</button>
         </div>
@@ -640,11 +975,11 @@
     <div class="audio-control" onclick="toggleAudio()" style="display: none;" id="audio-btn">
         <!-- Play SVG icon (default playing) -->
         <svg id="music-play-icon" viewBox="0 0 24 24" style="display: none;">
-            <path d="M8 5v14l11-7z"/>
+            <path d="M8 5v14l11-7z" />
         </svg>
         <!-- Pause SVG icon -->
         <svg id="music-pause-icon" viewBox="0 0 24 24">
-            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
         </svg>
     </div>
 
@@ -661,13 +996,25 @@
             <div class="story-layout">
                 <div class="story-text">
                     <p>
-                        It all started with a simple hello. A moment that seemed completely ordinary at the time, but quickly became the most beautiful turning point of our lives. We had no idea that a single conversation would lead us here.
+                        It all started with a simple greeting, "hello." A moment that seemed so ordinary at the time,
+                        but unknowingly became the most beautiful turning point in our lives. We never imagined that one
+                        simple conversation would lead us to this point.
                     </p>
                     <p>
-                        From that very first day, your smile brought an unexpected light to my world. Every shared laugh, every message, and every quiet moment we spent talking drew us closer. It was as if two puzzle pieces finally found their perfect fit.
+                        Since that first day, your smile has brought a light into my world I never expected. Every laugh
+                        we share, every text we send, and every moment we share brings us closer together. It feels like
+                        two puzzle pieces finally finding their perfect match.
                     </p>
                     <p>
-                        Looking back at our first meet, my heart overflows with gratitude. You have shown me a kind of happiness I never knew existed, and since that day, every moment spent with you has been a cherished memory.
+                        Saat mengenang hari pertama kita saling mengenal, hatiku dipenuhi rasa syukur. Meskipun kita
+                        belum pernah bertemu secara langsung, kamu telah menghadirkan kebahagiaan yang sebelumnya tidak
+                        pernah kukenal. Sejak hari itu, setiap percakapan, setiap perhatian, dan setiap momen yang kita
+                        lalui bersama telah menjadi kenangan yang sangat berarti. Aku percaya, suatu hari nanti, semua
+                        cerita yang kita bangun dari kejauhan akan membawa kita pada pertemuan pertama yang selama ini
+                        kita nantikan.Looking back at our first meet, my heart overflows with gratitude. You have shown
+                        me a kind of
+                        happiness I never knew existed, and since that day, every moment spent with you has been a
+                        cherished memory.
                     </p>
                 </div>
                 <div class="story-visual"></div>
@@ -703,25 +1050,153 @@
             </p>
         </section>
 
+        <!-- PLACES TO VISIT SECTION -->
+        <section class="section-card reveal" id="places-section">
+            <h2 class="section-title">📍 Places We'll Visit Together</h2>
+            <p class="countdown-subtitle" style="margin-bottom: 25px;">
+                "Setiap sudut dunia akan terasa jauh lebih indah saat kita jelajahi bersama."
+            </p>
+
+            <!-- Filter Buttons -->
+            <div class="places-filters">
+                <button class="filter-btn active" onclick="filterPlaces('all', this)">✨ Semua Tempat</button>
+                <button class="filter-btn" onclick="filterPlaces('sunset', this)">🌅 Pantai & Sunset</button>
+                <button class="filter-btn" onclick="filterPlaces('nature', this)">⛰️ Alam & Santai</button>
+                <button class="filter-btn" onclick="filterPlaces('fun', this)">🎡 Hiburan & Seru</button>
+                <button class="filter-btn" onclick="filterPlaces('foodie', this)">🍰 Kuliner & Cafe</button>
+                <button class="filter-btn" onclick="filterPlaces('culture', this)">🎨 Seni & Budaya</button>
+            </div>
+
+            <!-- Places Cards Grid -->
+            <div class="places-grid">
+                <!-- Place Card 1 (Embed TikTok Player) -->
+                <div class="place-card" data-category="fun">
+                    <div class="tiktok-embed-container">
+                        <!-- EMBED TIKTOK: Menggunakan format player resmi TikTok -->
+                        <iframe class="tiktok-embed-player"
+                            src="https://www.tiktok.com/@zalstore.online/video/7644890524918222101?q=playtopia%20palembang%20square&t=1784444990272"
+                            title="TikTok Video Player" allow="fullscreen" loading="lazy">
+                        </iframe>
+                        <span class="place-status-tag">🎵 TikTok Video</span>
+                    </div>
+                    <div class="place-body">
+                        <div class="place-location">📍 Playtopia Palembang</div>
+                        <h3 class="place-title">🎠 Siapa Bilang Main Itu Cuma Buat Anak-anak?</h3>
+                        <p class="place-desc">
+                            Hari ini kita jadi anak kecil lagi ya. Balapan di setiap wahana, saling ketawa, saling foto,
+                            dan pulang dengan senyum yang lebih lebar daripada saat datang. ❤️
+                        </p>
+                        <div class="place-footer">
+                            <span class="place-category">🎡 Fun Date</span>
+                            <button class="place-heart-btn" onclick="togglePlaceHeart(this)">
+                                <span class="heart-icon">🤍</span> <span class="heart-count">💞 Play • Laugh •
+                                    Love</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Place Card 2 (Embed TikTok Player) -->
+                <div class="place-card" data-category="nature">
+                    <div class="tiktok-embed-container">
+                        <!-- PETUNJUK TIKTOK: Ganti angka ID di akhir URL src dengan ID Video TikTok kamu -->
+                        <iframe class="tiktok-embed-player" src="https://www.tiktok.com/player/v1/7663120545487015176"
+                            title="TikTok Video Player" allow="fullscreen" loading="lazy">
+                        </iframe>
+                        <span class="place-status-tag">✨ Planned</span>
+                    </div>
+                    <div class="place-body">
+                        <div class="place-location">📍 Kisah Baru Cabin</div>
+                        <h3 class="place-title">Ngopi Senja, Cerita Berdua ☕</h3>
+                        <p class="place-desc">
+                            Di sini, waktu terasa melambat. Kita bisa ngobrol apa saja sambil ditemani kopi dan
+                            pemandangan senja yang hangat.
+                        </p>
+                        <div class="place-footer">
+                            <span class="place-category">Alam & Santai</span>
+                            <button class="place-heart-btn" onclick="togglePlaceHeart(this)">
+                                <span class="heart-icon">🤍</span> <span class="heart-count">💞 Senja • Cerita •
+                                    Kita</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Place Card 3 (Embed TikTok Player) -->
+                <div class="place-card" data-category="fun">
+                    <div class="tiktok-embed-container">
+                        <!-- PETUNJUK TIKTOK: Ganti angka ID di akhir URL src dengan ID Video TikTok kamu -->
+                        <iframe class="tiktok-embed-player"
+                            src="https://www.tiktok.com/@sang_dagol_ok/video/7547593471553588486?q=senja%20palembang&t=1784445183799"
+                            title="TikTok Video Player" allow="fullscreen" loading="lazy">
+                        </iframe>
+                        <span class="place-status-tag">🎡 Wishlist</span>
+                    </div>
+                    <div class="place-body">
+                        <div class="place-location">📍 Jalan-Jalan Sore</div>
+                        <h3 class="place-title">Mencari Jajanan Tradisional Favoritku 🍢</h3>
+                        <p class="place-desc">
+                            Sore hari adalah waktu yang tepat untuk berjalan santai sambil mencari jajanan
+                            tradisional. Menemukan cita rasa klasik yang mengingatkan pada masa kecil.
+                        </p>
+                        <div class="place-footer">
+                            <span class="place-category">Hiburan & Seru</span>
+                            <button class="place-heart-btn" onclick="togglePlaceHeart(this)">
+                                <span class="heart-icon">🤍</span> <span class="heart-count">💞 Jajan • Nostalgia •
+                                    Kita</span>
+                            </button>
+                        </div>
+                    </div>
+                </div> <!-- End .places-grid -->
+        </section> <!-- End #places-section -->
+
         <!-- CLOSING LOVE LETTER SECTION -->
         <section class="section-card reveal" id="closing-letter">
             <h2 class="section-title">💖 My Letter to You</h2>
             <div class="letter-content">
                 <p style="margin-bottom: 20px;">To the one who holds my heart,</p>
                 <p style="margin-bottom: 20px;">
-                    As we count down to our special day, I look back at everything we've shared and realize how incredibly lucky I am to have you by my side. You have brought so much warmth, comfort, and joy into my life. Every day becomes an adventure, and every memory becomes a treasure simply because you are in it.
+                    As we count down to our special day, I look back at everything we've shared and realize how
+                    incredibly lucky I am to have you by my side. You have brought so much warmth, comfort, and
+                    joy into my life. Every day becomes an adventure, and every memory becomes a treasure simply because
+                    you are in it.
                 </p>
                 <p>
-                    Thank you for being my anchor, my best friend, and my greatest blessing. No matter where life takes us, my heart will always beat for you. I look forward to creating a lifetime of beautiful moments and celebrating every special day together.
+                    Thank you for being my anchor, my best friend, and my greatest blessing. No matter where
+                    life takes us, my heart will always beat for you. I look forward to creating a lifetime of beautiful
+                    moments and celebrating every special day together.
                 </p>
                 <div class="letter-signature">With all my love, always.</div>
             </div>
         </section>
 
+        <!-- FOOTER SECTION -->
         <footer>
-            <p>Avrixx 2k26 | © 2026</p>
+            <div class="footer-card reveal">
+                <div class="footer-logo">💖</div>
+                <p class="footer-quote">
+                    "Every second spent with you is a cherished memory, and every future day is a promise of love."
+                </p>
+
+                <div class="footer-links">
+                    <a href="#first-meet" class="footer-link-btn">✨ Our First Meet</a>
+                    <a href="#countdown-section" class="footer-link-btn">❤️ Countdown</a>
+                    <a href="#places-section" class="footer-link-btn">📍 Places to Visit</a>
+                    <a href="#closing-letter" class="footer-link-btn">💌 My Letter</a>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <p class="footer-copy">
+                    Dibuat dengan segenap cinta & tulus ❤️ | Our Special Day © 2026
+                </p>
+
+                <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    ⬆️ Kembali ke Atas
+                </button>
+            </div>
         </footer>
-    </div>
+    </div> <!-- End .container -->
 
     <!-- ELEGANT POPUP MODAL -->
     <div class="modal-overlay" id="special-modal">
@@ -767,11 +1242,11 @@
             const overlay = document.getElementById("intro-overlay");
             overlay.style.opacity = "0";
             overlay.style.transform = "translateY(-100%)";
-            
+
             // Audio starts playing on user interaction
             bgMusic.volume = 0.5;
             bgMusic.play().catch(e => console.log("Audio autoplay blocked, waiting for interaction", e));
-            
+
             setTimeout(() => {
                 overlay.style.display = "none";
                 audioBtn.style.display = "flex";
@@ -805,19 +1280,19 @@
             const starsContainer = document.getElementById("stars-container");
             const star = document.createElement("div");
             star.className = "sparkle-star";
-            
+
             const size = Math.random() * 5 + 3;
             star.style.width = `${size}px`;
             star.style.height = `${size}px`;
-            
+
             star.style.left = `${Math.random() * 100}vw`;
             star.style.top = `${Math.random() * 100}vh`;
-            
+
             const duration = Math.random() * 3 + 2;
             star.style.animationDuration = `${duration}s`;
-            
+
             starsContainer.appendChild(star);
-            
+
             // Remove after some time
             setTimeout(() => {
                 star.remove();
@@ -830,19 +1305,19 @@
             const heart = document.createElement("div");
             heart.className = "floating-heart";
             heart.innerHTML = "❤️";
-            
+
             const fontSize = Math.random() * 20 + 15;
             heart.style.fontSize = `${fontSize}px`;
             heart.style.left = `${Math.random() * 100}vw`;
-            
+
             const duration = Math.random() * 8 + 6;
             heart.style.animationDuration = `${duration}s`;
-            
+
             // Add slight randomness in movement
             heart.style.transform = `translateX(${Math.random() * 50 - 25}px)`;
-            
+
             heartsContainer.appendChild(heart);
-            
+
             setTimeout(() => {
                 heart.remove();
             }, duration * 1000);
@@ -856,15 +1331,15 @@
                     const heart = document.createElement("div");
                     heart.className = "floating-heart";
                     heart.innerHTML = Math.random() > 0.5 ? "❤️" : "💖";
-                    
+
                     const fontSize = Math.random() * 28 + 16;
                     heart.style.fontSize = `${fontSize}px`;
                     heart.style.left = `${Math.random() * 100}vw`;
-                    
+
                     // Speed up animation for flurry
                     const duration = Math.random() * 4 + 3;
                     heart.style.animationDuration = `${duration}s`;
-                    
+
                     heartsContainer.appendChild(heart);
                     setTimeout(() => heart.remove(), duration * 1000);
                 }, i * 100);
@@ -883,7 +1358,7 @@
                 document.getElementById("hours-val").innerText = "00";
                 document.getElementById("minutes-val").innerText = "00";
                 document.getElementById("seconds-val").innerText = "00";
-                
+
                 if (!isTargetReached) {
                     isTargetReached = true;
                     triggerSpecialDayTransition();
@@ -907,7 +1382,7 @@
         // When Countdown reaches 0
         function triggerSpecialDayTransition() {
             console.log("Triggering Special Day Actions!");
-            
+
             // 1. Confetti Animation (Burst)
             triggerConfettiShakes();
 
@@ -915,7 +1390,7 @@
             spawnHeartFlurry(60);
 
             // 3. Play music slower
-            bgMusic.playbackRate = 0.8; 
+            bgMusic.playbackRate = 0.8;
 
             // 4. Show Elegant Popup Modal
             setTimeout(() => {
@@ -976,10 +1451,68 @@
             }, 300);
         }
 
+        // Filter Places by Category
+        function filterPlaces(category, btn) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const cards = document.querySelectorAll('.place-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 50);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
+            });
+        }
+
+        // Toggle Heart on Place Card
+        function togglePlaceHeart(btn) {
+            btn.classList.toggle('liked');
+            const icon = btn.querySelector('.heart-icon');
+            if (btn.classList.contains('liked')) {
+                icon.textContent = '💖';
+                if (typeof confetti === 'function') {
+                    confetti({
+                        particleCount: 25,
+                        spread: 50,
+                        origin: { y: 0.8 }
+                    });
+                }
+            } else {
+                icon.textContent = '🤍';
+            }
+        }
+
+        // Auto-fix TikTok URLs to embed format if raw link was pasted
+        function fixTikTokEmbedUrls() {
+            const iframes = document.querySelectorAll('.tiktok-embed-player');
+            iframes.forEach(iframe => {
+                let src = iframe.getAttribute('src');
+                if (src && src.includes('/video/')) {
+                    const match = src.match(/\/video\/(\d+)/);
+                    if (match && match[1]) {
+                        const videoId = match[1];
+                        iframe.src = `https://www.tiktok.com/player/v1/${videoId}`;
+                    }
+                }
+            });
+        }
+        document.addEventListener('DOMContentLoaded', fixTikTokEmbedUrls);
+
         // Intersection Observer for scroll animations
         function initializeScrollReveal() {
             const reveals = document.querySelectorAll('.reveal');
-            
+
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -996,4 +1529,5 @@
         }
     </script>
 </body>
+
 </html>
