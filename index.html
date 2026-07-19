@@ -467,6 +467,30 @@
             border-radius: 20px 20px 0 0;
         }
 
+        .tiktok-watch-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 10px 18px;
+            background: linear-gradient(45deg, #00f2fe, #ff0050);
+            color: #ffffff !important;
+            font-weight: 600;
+            font-size: 0.88rem;
+            text-decoration: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 15px rgba(255, 0, 80, 0.25);
+            transition: all 0.3s ease;
+            margin-top: 12px;
+        }
+
+        .tiktok-watch-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 80, 0.4);
+            color: #ffffff !important;
+        }
+
         .place-status-tag {
             position: absolute;
             top: 12px;
@@ -1072,9 +1096,8 @@
                 <!-- Place Card 1 (Embed TikTok Player) -->
                 <div class="place-card" data-category="fun">
                     <div class="tiktok-embed-container">
-                        <!-- EMBED TIKTOK: Menggunakan format player resmi TikTok -->
                         <iframe class="tiktok-embed-player"
-                            src="https://www.tiktok.com/@zalstore.online/video/7644890524918222101?q=playtopia%20palembang%20square&t=1784444990272"
+                            src="https://www.tiktok.com/player/v1/7644890524918222101"
                             title="TikTok Video Player" allow="fullscreen" loading="lazy">
                         </iframe>
                         <span class="place-status-tag">🎵 TikTok Video</span>
@@ -1086,11 +1109,13 @@
                             Hari ini kita jadi anak kecil lagi ya. Balapan di setiap wahana, saling ketawa, saling foto,
                             dan pulang dengan senyum yang lebih lebar daripada saat datang. ❤️
                         </p>
+                        <a href="https://www.tiktok.com/@zalstore.online/video/7644890524918222101" target="_blank" rel="noopener noreferrer" class="tiktok-watch-btn">
+                            ▶️ Tonton Video di TikTok (HP)
+                        </a>
                         <div class="place-footer">
                             <span class="place-category">🎡 Fun Date</span>
                             <button class="place-heart-btn" onclick="togglePlaceHeart(this)">
-                                <span class="heart-icon">🤍</span> <span class="heart-count">💞 Play • Laugh •
-                                    Love</span>
+                                <span class="heart-icon">🤍</span> <span class="heart-count">💞 Play • Laugh • Love</span>
                             </button>
                         </div>
                     </div>
@@ -1099,8 +1124,8 @@
                 <!-- Place Card 2 (Embed TikTok Player) -->
                 <div class="place-card" data-category="nature">
                     <div class="tiktok-embed-container">
-                        <!-- PETUNJUK TIKTOK: Ganti angka ID di akhir URL src dengan ID Video TikTok kamu -->
-                        <iframe class="tiktok-embed-player" src="https://www.tiktok.com/player/v1/7663120545487015176"
+                        <iframe class="tiktok-embed-player"
+                            src="https://www.tiktok.com/player/v1/7663120545487015176"
                             title="TikTok Video Player" allow="fullscreen" loading="lazy">
                         </iframe>
                         <span class="place-status-tag">✨ Planned</span>
@@ -1112,11 +1137,13 @@
                             Di sini, waktu terasa melambat. Kita bisa ngobrol apa saja sambil ditemani kopi dan
                             pemandangan senja yang hangat.
                         </p>
+                        <a href="https://www.tiktok.com/@stlowwbelyy/video/7663120545487015176" target="_blank" rel="noopener noreferrer" class="tiktok-watch-btn">
+                            ▶️ Tonton Video di TikTok (HP)
+                        </a>
                         <div class="place-footer">
                             <span class="place-category">Alam & Santai</span>
                             <button class="place-heart-btn" onclick="togglePlaceHeart(this)">
-                                <span class="heart-icon">🤍</span> <span class="heart-count">💞 Senja • Cerita •
-                                    Kita</span>
+                                <span class="heart-icon">🤍</span> <span class="heart-count">💞 Senja • Cerita • Kita</span>
                             </button>
                         </div>
                     </div>
@@ -1125,9 +1152,8 @@
                 <!-- Place Card 3 (Embed TikTok Player) -->
                 <div class="place-card" data-category="fun">
                     <div class="tiktok-embed-container">
-                        <!-- PETUNJUK TIKTOK: Ganti angka ID di akhir URL src dengan ID Video TikTok kamu -->
                         <iframe class="tiktok-embed-player"
-                            src="https://www.tiktok.com/@sang_dagol_ok/video/7547593471553588486?q=senja%20palembang&t=1784445183799"
+                            src="https://www.tiktok.com/player/v1/7547593471553588486"
                             title="TikTok Video Player" allow="fullscreen" loading="lazy">
                         </iframe>
                         <span class="place-status-tag">🎡 Wishlist</span>
@@ -1139,11 +1165,13 @@
                             Sore hari adalah waktu yang tepat untuk berjalan santai sambil mencari jajanan
                             tradisional. Menemukan cita rasa klasik yang mengingatkan pada masa kecil.
                         </p>
+                        <a href="https://www.tiktok.com/@sang_dagol_ok/video/7547593471553588486" target="_blank" rel="noopener noreferrer" class="tiktok-watch-btn">
+                            ▶️ Tonton Video di TikTok (HP)
+                        </a>
                         <div class="place-footer">
                             <span class="place-category">Hiburan & Seru</span>
                             <button class="place-heart-btn" onclick="togglePlaceHeart(this)">
-                                <span class="heart-icon">🤍</span> <span class="heart-count">💞 Jajan • Nostalgia •
-                                    Kita</span>
+                                <span class="heart-icon">🤍</span> <span class="heart-count">💞 Jajan • Nostalgia • Kita</span>
                             </button>
                         </div>
                     </div>
