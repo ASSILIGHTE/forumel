@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi Amelia ❤️</title>
+    <title>Hi sayang ❤️</title>
 
     <!-- Google Fonts for elegant typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -292,13 +292,136 @@
             animation: pulse 1.8s infinite ease-in-out;
         }
 
-        /* ================= COUNTDOWN SECTION ================= */
-        #countdown-section {
+        /* ================= PHOTO GALLERY SECTION ================= */
+        #gallery-section {
             background: linear-gradient(180deg, rgba(255, 230, 240, 0.5), rgba(255, 255, 255, 0.6));
             border: 2px solid rgba(255, 255, 255, 0.8);
             text-align: center;
-            /* Animation triggers when section appears */
             animation: fadeZoomIn 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .gallery-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-top: -15px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        /* Photo Grid */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-bottom: 20px;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(255, 182, 193, 0.25);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            aspect-ratio: 1 / 1;
+            background: linear-gradient(135deg, #ffe3ee, #fff0f5);
+        }
+
+        .photo-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 45px rgba(255, 101, 163, 0.35);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(190, 24, 93, 0.45) 0%, transparent 55%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 18px;
+        }
+
+        .photo-item:hover .photo-overlay {
+            opacity: 1;
+        }
+
+        .photo-overlay span {
+            color: #fff;
+            font-size: 1.5rem;
+            animation: heartBeat 1.5s infinite;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(30, 10, 20, 0.88);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 99999;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .lightbox.show {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            animation: cardEntrance 0.4s ease;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: #fff;
+            font-size: 2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 101, 163, 0.6);
+            transform: scale(1.1);
         }
 
         .countdown-subtitle {
@@ -312,60 +435,6 @@
             margin-left: auto;
             margin-right: auto;
             line-height: 1.6;
-        }
-
-        /* Countdown Grid */
-        .countdown-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .countdown-item {
-            background: rgba(255, 255, 255, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            border-radius: 20px;
-            min-width: 140px;
-            padding: 25px 15px;
-            box-shadow: 0 8px 25px rgba(255, 182, 193, 0.15);
-            transition: transform 0.3s ease;
-        }
-
-        .countdown-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .countdown-val {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--rose-deep);
-            line-height: 1;
-            margin-bottom: 10px;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .countdown-label {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 4px;
-        }
-
-        .countdown-subtext {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--text-dark);
-            max-width: 500px;
-            margin: 0 auto;
         }
 
         /* ================= PLACES TO VISIT SECTION ================= */
@@ -989,7 +1058,7 @@
             <span class="envelope-icon">💌</span>
             <h2
                 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--rose-deep); margin-bottom: 10px;">
-                Halo Amel</h2>
+                Halo sayang</h2>
             <p style="font-size: 0.95rem; color: var(--text-muted);">Silakan ketuk tombol di bawah untuk membukanya</p>
             <button onclick="openLetter()" class="open-btn">Buka Surat ✨</button>
         </div>
@@ -1040,34 +1109,53 @@
             </div>
         </section>
 
-        <!-- SPECIAL COUNTDOWN SECTION -->
-        <section class="section-card reveal" id="countdown-section">
-            <h2 class="section-title">❤️ Countdown to Our Special Day ❤️</h2>
-            <p class="countdown-subtitle">"Every second brings us closer to another beautiful memory together."</p>
+        <!-- PHOTO GALLERY SECTION -->
+        <section class="section-card reveal" id="gallery-section">
+            <h2 class="section-title">📸 Our Memories Together 📸</h2>
+            <p class="gallery-subtitle">"Every photo holds a thousand words, but none can capture how much I love you."
+            </p>
 
-            <div class="countdown-grid">
-                <div class="countdown-item">
-                    <div class="countdown-val" id="days-val">00</div>
-                    <div class="countdown-label">❤️ Days</div>
+            <div class="photo-grid">
+                <div class="photo-item" onclick="openLightbox('1.jpg')">
+                    <img src="1.jpg" alt="Our Memory 1" loading="lazy">
+                    <div class="photo-overlay"><span>❤️</span></div>
                 </div>
-                <div class="countdown-item">
-                    <div class="countdown-val" id="hours-val">00</div>
-                    <div class="countdown-label">❤️ Hours</div>
+                <div class="photo-item" onclick="openLightbox('2.jpg')">
+                    <img src="2.jpg" alt="Our Memory 2" loading="lazy">
+                    <div class="photo-overlay"><span>❤️</span></div>
                 </div>
-                <div class="countdown-item">
-                    <div class="countdown-val" id="minutes-val">00</div>
-                    <div class="countdown-label">❤️ Minutes</div>
+                <div class="photo-item" onclick="openLightbox('3.jpg')">
+                    <img src="3.jpg" alt="Our Memory 3" loading="lazy">
+                    <div class="photo-overlay"><span>❤️</span></div>
                 </div>
-                <div class="countdown-item">
-                    <div class="countdown-val" id="seconds-val">00</div>
-                    <div class="countdown-label">❤️ Seconds</div>
+                <div class="photo-item" onclick="openLightbox('4.jpg')">
+                    <img src="4.jpg" alt="Our Memory 4" loading="lazy">
+                    <div class="photo-overlay"><span>❤️</span></div>
+                </div>
+                <div class="photo-item" onclick="openLightbox('5.jpg')">
+                    <img src="5.jpg" alt="Our Memory 5" loading="lazy">
+                    <div class="photo-overlay"><span>❤️</span></div>
+                </div>
+                <div class="photo-item" onclick="openLightbox('6.jpg')">
+                    <img src="6.jpg" alt="Our Memory 6" loading="lazy">
+                    <div class="photo-overlay"><span>❤️</span></div>
+                </div>
+                <div class="photo-item" onclick="openLightbox('7.jpg')">
+                    <img src="7.jpg" alt="Our Memory 7" loading="lazy">
+                    <div class="photo-overlay"><span>❤️</span></div>
+                </div>
+                <div class="photo-item" onclick="openLightbox('8.jpg')">
+                    <img src="8.jpg" alt="Our Memory 8" loading="lazy">
+                    <div class="photo-overlay"><span>❤️</span></div>
                 </div>
             </div>
-
-            <p class="countdown-subtext" id="countdown-desc-text">
-                I can't wait to see you again.<br>Every heartbeat counts until July 28, 2026. ❤️
-            </p>
         </section>
+
+        <!-- LIGHTBOX MODAL -->
+        <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+            <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+            <img id="lightbox-img" src="" alt="Full photo">
+        </div>
 
         <!-- PLACES TO VISIT SECTION -->
         <section class="section-card reveal" id="places-section">
@@ -1182,7 +1270,7 @@
             <div class="letter-content">
                 <p style="margin-bottom: 20px;">To the one who holds my heart,</p>
                 <p style="margin-bottom: 20px;">
-                    As we count down to our special day, I look back at everything we've shared and realize how
+                    I look back at everything we've shared and realize how
                     incredibly lucky I am to have you by my side. You have brought so much warmth, comfort, and
                     joy into my life. Every day becomes an adventure, and every memory becomes a treasure simply because
                     you are in it.
@@ -1214,7 +1302,7 @@
                 <div class="footer-divider"></div>
 
                 <p class="footer-copy">
-                    Dibuat dengan segenap cinta & tulus ❤️ | Our Special Day © 2026
+                    Avrixx 2k26
                 </p>
 
                 <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
@@ -1534,6 +1622,34 @@
             });
         }
         document.addEventListener('DOMContentLoaded', fixTikTokEmbedUrls);
+
+        // ================= LIGHTBOX FUNCTIONS =================
+        function openLightbox(src) {
+            const lightbox = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lightbox.style.display = 'flex';
+            // Trigger transition
+            requestAnimationFrame(() => {
+                lightbox.classList.add('show');
+            });
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.classList.remove('show');
+            setTimeout(() => {
+                lightbox.style.display = 'none';
+                document.getElementById('lightbox-img').src = '';
+            }, 400);
+            document.body.style.overflow = '';
+        }
+
+        // Close lightbox on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
 
         // Intersection Observer for scroll animations
         function initializeScrollReveal() {
